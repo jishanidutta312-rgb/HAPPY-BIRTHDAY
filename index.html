@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love 💗</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background: linear-gradient(180deg, #ffe4ec, #ffd6e8);
+    overflow-x:hidden;
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-40px;
+    font-size:24px;
+    animation: floatUp 8s linear infinite;
+    opacity:0.6;
+}
+
+.heart:nth-child(1){ left:10%; animation-delay:0s;}
+.heart:nth-child(2){ left:25%; animation-delay:2s;}
+.heart:nth-child(3){ left:50%; animation-delay:4s;}
+.heart:nth-child(4){ left:70%; animation-delay:6s;}
+.heart:nth-child(5){ left:85%; animation-delay:1s;}
+
+@keyframes floatUp{
+    0%{ transform:translateY(0); opacity:0; }
+    20%{ opacity:0.8; }
+    100%{ transform:translateY(-120vh); opacity:0; }
+}
+
+/* Sections = Pages */
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,0.95);
+    padding:45px;
+    border-radius:30px;
+    max-width:420px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.2);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(30px);}
+    to{ opacity:1; transform:translateY(0);}
+}
+
+h1{
+    color:#e75480;
+    font-size:2.5rem;
+    text-shadow:0 0 15px #f8a1c4;
+}
+
+p{
+    margin-top:20px;
+    color:#555;
+    line-height:1.7;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 28px;
+    border:none;
+    border-radius:25px;
+    background:#f8a1c4;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#e75480;
+}
+
+/* Page 2 - Images */
+.gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:25px;
+}
+
+.img-box{
+    height:120px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#ffd1e8,#ffb6d5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:0.9rem;
+    padding:10px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{ transform:scale(1);}
+    50%{ transform:scale(1.05);}
+    100%{ transform:scale(1);}
+}
+
+/* Popup */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+.popup-content{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    max-width:320px;
+    text-align:center;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop{
+    from{ transform:scale(0); }
+    to{ transform:scale(1); }
+}
+.memory-img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(231,84,128,0.35);
+    animation: softFade 1.5s ease forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.memory-img:hover{
+    transform: scale(1.08);
+    box-shadow:0 15px 35px rgba(231,84,128,0.55);
+}
+.love-note{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#555;
+    margin-top:25px;
+    animation: softFade 1.8s ease;
+}
+.memory-box{
+    position:relative;
+    width:100%;
+    height:160px;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(231,84,128,0.35);
+}
+
+
+.memory-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(12px) brightness(0.7);
+    transition:filter 1.8s ease;
+}
+
+.memory-box.revealed img{
+    filter:blur(0) brightness(1);
+}
+
+/* Overlay text */
+.overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(248,161,196,0.35);
+    color:white;
+    font-size:1rem;
+    letter-spacing:1px;
+    transition:opacity 1.5s ease;
+}
+
+.memory-box.revealed .overlay{
+    opacity:0;
+    pointer-events:none;
+}
+
+@keyframes softFade{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="heart">💗</div>
+<div class="heart">💖</div>
+<div class="heart">💞</div>
+<div class="heart">💘</div>
+<div class="heart">💓</div>
+
+<!-- PAGE 1 -->
+<section id="page1">
+    <div class="card">
+        <h1>Happy Birthday Rahul💕</h1>
+        <p>
+            Today is not just your birthday,
+            it’s the day my favorite person was born.
+            Scroll down.......... I have made something special for you baby💫
+        </p>
+        <a href="#page2"><button class="btn">Next 💗</button></a>
+    </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2">
+    <div class="card">
+        <h1>Our Memories 🌸</h1>
+        <p>Moments that will live forever in my heart</p>
+
+       <div class="gallery">
+
+  <div class="memory-box" onclick="reveal(this)" 
+       data-message="This moment still makes my heart smile 💗">
+    <img src="memory3.jpeg">
+    <div class="overlay">Tap to reveal 💗</div>
+  </div>
+
+  <div class="memory-box" onclick="reveal(this)" 
+       data-message="One of my favorite memories with you ✨">
+    <img src="memory2.jpeg">
+    <div class="overlay">Tap to reveal 💗</div>
+  </div>
+
+  <div class="memory-box" onclick="reveal(this)" 
+       data-message="Forever grateful for this day 💕">
+    <img src="memory1.jpeg">
+    <div class="overlay">Tap to reveal 💗</div>
+  </div>
+
+  <div class="memory-box" onclick="reveal(this)" 
+       data-message="A memory I’ll always protect 💞">
+    <img src="memory4.jpeg">
+    <div class="overlay">Tap to reveal 💗</div>
+  </div>
+
+</div>
+
+
+        <a href="#page3"><button class="btn">Next 💖</button></a>
+    </div>
+</section>
+<!-- PAGE 3 : CUSTOM LOVE NOTE -->
+<section id="page3">
+    <div class="card">
+        <h1>From My Heart 💌</h1>
+
+        <p class="love-note">
+            Happy Birthday Baby..I just wanna say that my life has been so much better since i met you , you made my life brighter and cheerfull just by your presence in it . Sometimes i just look at you and think how can someone be such kindhearted , pure , adorable , cutie just so perfect . Really never thought that you will become that much special to me . You are the best gift of god that i have .  
+
+            <br><br>
+
+            I mean every word written here ,
+            and also the love, care, and emotions behind it.💗
+        </p>
+
+        <a href="#page4">
+            <button class="btn">Next 💕</button>
+        </a>
+    </div>
+</section>
+<!-- PAGE 3 -->
+<section id="page4">
+    <div class="card">
+        <h1>Just For You 💌</h1>
+        <p>
+            You are my comfort, my happiness,
+            and my favorite thought every day.
+            I’m lucky to have you in my life.
+        </p>
+        <button class="btn" onclick="openPopup()">Tap for a Surprise 🎁</button>
+    </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2 style="color:#e75480;">I Love You Rahul💗</h2>
+        <p style="margin-top:15px;">
+            No matter  where life takes us,
+            you’ll always have my heart 💞
+        </p>
+        <button class="btn" onclick="closePopup()">Close 💕</button>
+    </div>
+</div>
+
+<script>
+function openPopup(){
+    document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+<script>
+function reveal(box){
+    box.classList.add("revealed");
+}
+</script>
+</body>
+</html>
